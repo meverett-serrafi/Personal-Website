@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Matthew Everett — Personal Website
 
-## Getting Started
+The personal website and portfolio of **Matthew Everett**, a software engineer.
+A sleek, dark-themed site that showcases an about section, work experience,
+projects, and skills — with all content driven from a single editable file.
 
-First, run the development server:
+🔗 **Live site:** [personal-website-chi-weld-71.vercel.app](https://personal-website-chi-weld-71.vercel.app)
+
+## Stack
+
+- **Next.js 16** (App Router, TypeScript)
+- **Tailwind CSS v4**
+- **shadcn/ui** (Radix primitives, Nova preset — Geist font + Lucide icons)
+- Deployed on **Vercel**
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd personal-website
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then run the commands you need:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev     # start the dev server at http://localhost:3000
+npm run build   # create a production build
+npm run start   # serve the production build
+npm run lint    # lint the project
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Editing content
 
-## Learn More
+Everything you'll want to change lives in
+[`src/lib/content.ts`](src/lib/content.ts):
 
-To learn more about Next.js, take a look at the following resources:
+- `site` — name, role, tagline, email, location, avatar, résumé link
+- `nav` — navigation items
+- `socials` — social links (github / linkedin / mail / twitter)
+- `about` — bio paragraphs + quick facts
+- `experience` — work history timeline
+- `projects` — project cards (title, description, tags, image, links)
+- `skills` — skill groups
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Image fields (`site.avatar`, each `project.image`) accept a path under
+`/public`. Leave them as `""` to show a styled placeholder.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The site is deployed on Vercel and available at the aliased link above:
+**https://personal-website-chi-weld-71.vercel.app**. Pushes to `main` are built
+and deployed automatically.
